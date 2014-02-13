@@ -91,21 +91,21 @@ $('#five').click(function() {
     }
   });
 
-  $('#subtract').click(function() {
+  $('#sub').click(function() {
     if (notLastOp()) {
       var outputText = $('#output').text() + '-';
       $('#output').text(outputText);
     }
   });
 
-  $('#multiply').click(function() {
+  $('#mul').click(function() {
     if (notLastOp()) {
       var outputText = $('#output').text() + '*';
       $('#output').text(outputText);
     }
   });
 
-  $('#divide').click(function() {
+  $('#div').click(function() {
     if (notLastOp()) {
       var outputText = $('#output').text() + '/';
       $('#output').text(outputText);
@@ -129,14 +129,14 @@ $('#five').click(function() {
   $('#square').click(function() {
     var outputText = $('#output').text();
     var outputNum = parseFloat(eval(outputText));
-    // FIXME
-    var newNum = Math.sqrt(outputNum);
+    var newNum = outputNum*outputNum;
     $('#output').text(newNum);
   });
 
   $('#equals').click(function() {
-    // FIXME
-    var res = eval('4*10+7');
+    var outputText = $('#output').text();
+    var outputNum = parseFloat(eval(outputText));
+    var res = eval(outputNum);
     $('#output').text(res);
   });
 
