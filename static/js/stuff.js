@@ -22,4 +22,7 @@ $('#turn_me_pink').click(function() {
 });
 
 // Problem 4 (Greet Me) -----------------------------------------------------
-
+$('#greet_me').click(function() {
+	alert(
+		$('#my_name').val());
+});
