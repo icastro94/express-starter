@@ -12,9 +12,26 @@ $(document).ready(function() {
   	context.strokeRect(1, 1, 100, 50);
   });
  $('#p2').click(function() {
- 	context.strokeRect(200, 200, 100, 100);
+ 	context.strokeRect(20, 150, 100, 100);
   });
- 
+ $('#p3').click(function() {
+ 	context.beginPath()
+ 		context.arc(200, 200, 50, 0, Math.PI);
+ 	context.closePath()
+ 	context.stroke()
+  });
+ $('#p4').click(function() {
+ 	context.beginPath()
+ 		context.arc(300, 75, 50, Math.PI, -Math.PI);
+ 	context.closePath()
+ 	context.stroke()
+ });
+ $('#p5').click(function() {
+ 	context.moveTo(300, 300);
+ 	context.lineTo(250, 250);
+ 	context.strokeStyle = 'black';
+ 	context.stroke();
+ });
   //Write your code for p1-p12 here
   //
 
