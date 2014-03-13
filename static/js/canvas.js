@@ -32,6 +32,10 @@ $(document).ready(function() {
  	context.strokeStyle = 'black';
  	context.stroke();
  });
+ 
+ $('#p6').click(function() {
+ 	context.fillRect(50, 300, 75, 25)
+ });
   //Write your code for p1-p12 here
   //
 

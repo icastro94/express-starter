@@ -9,13 +9,18 @@ $('#toggle_img').click(function() {
 });
 // Problem 3 (Swap Em) -----------------------------------------------
 $('#change_img').click(function() {
-	alert(
-		$('#new_img_file').val());
-});
+	if ($('#new_img_file').val() === 'giraffe.jpg') {
+		$("#main_img").attr('src','/static/img/giraffe.jpg');
+		$('#main_img').show();
+	} else {
+		alert(
+			$('#new_img_file').val());
+}});
 
 // Problem 4 (Find the Source) -------------------------------------------------
 $('.clickable').click(function() {
-  // WRITE CODE HERE
+  	alert(
+  		$(this).attr('src'))
 });
 
 // Problem 5 (Imgrr) -------------------------------------------------
