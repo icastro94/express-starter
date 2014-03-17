@@ -29,12 +29,42 @@ $(document).ready(function() {
  $('#p5').click(function() {
  	context.moveTo(300, 300);
  	context.lineTo(250, 250);
- 	context.strokeStyle = 'black';
- 	context.stroke();
+  context.strokeStyle = 'black';
+  context.stroke();
  });
  
  $('#p6').click(function() {
- 	context.fillRect(50, 300, 75, 25)
+ 	context.strokeStyle = 'green'
+  context.strokeRect(50, 100, 75, 25)
+ });
+
+ $('#p7').click(function() {
+  context.fillStyle = 'red'
+  context.beginPath()
+    context.arc(80, 300, 40, Math.PI, -Math.PI);
+  context.closePath()
+  context.fill();
+ });
+
+ $('#p8').click(function() {
+  context.fillStyle = 'yellow'
+  context.strokeStyle = 'blue'
+  context.strokeRect(300, 150, 40, 40)
+  context.fillRect(300, 150, 40, 40)
+ });
+ 
+ $('#p9').click(function() {
+  context.strokeStyle = 'black'
+  for ( var i=1; i<6; i++) {
+    context.strokeRect(100 + i * 50, 400, 50, 50)
+  }
+ });
+
+ $('#p10').click(function() {
+  context.strokeStyle = 'black'
+  for (var i=1; i<101; i++) {
+    context.strokeRect(-5 + i * 5, 470, 5, 5)
+  }
  });
   //Write your code for p1-p12 here
   //
