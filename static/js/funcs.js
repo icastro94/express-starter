@@ -25,6 +25,10 @@ $(document).ready(function() {
     context.stroke();
   };
 
+  var drawTriplet = function(x, y, color) {
+    context.beginPath();
+      context.arc()
+  }
   // Write drawTriplet function here
 
   // Challenge:
