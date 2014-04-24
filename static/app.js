@@ -25,8 +25,27 @@ app.get('/', function(req, res) {
 app.get('/test', function(req, res) {
   res.render('test.html', { });
 });
-app.get('/calc', function(req, res) {res.render('calc.html', { }); });
-
+app.get('/calc', function(req, res){
+	res.render('calc.html', { }); 
+});
+app.get('/chain-reaction', function(req, res) {
+	res.render('chain_reaction.html', { });
+});
+app.get('/stuff', function(req, res) {
+	res.render('stuff.html', { });
+});
+app.get('/imgrr', function(req, res) {
+	res.render('imgrr.html', { });
+});
+app.get('/canvas', function(req, res) {
+	res.render('canvas.html', { });
+});
+app.get('/funcs', function(req, res) {
+	res.render('funcs.html', { });
+});
+app.get('/ball', function(req, res) {
+	res.render('ball.html', { });
+});
 ///////////////////////////////////////////////////////////////////////////////
 // RUN CONFIGURATION                                                         //
 ///////////////////////////////////////////////////////////////////////////////
