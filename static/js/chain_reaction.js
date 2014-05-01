@@ -59,7 +59,16 @@ $(document).ready(function() {
     // Find the mouse x and y relative to the top-left corner of the canvas
     var x = e.pageX - $(this).offset().left;
     var y = e.pageY - $(this).offset().top;
-    // PUT STUFF HERE
+    for(i = 0; i < numBalls; i++) {
+      var b = {
+        x: x,
+        y: y,
+        r: 16,
+        vx: (Math.random() * 5) + 1,
+        vy: (Math.random() * 5) +1,
+      };
+     balls.push(b)
+   };
   });
 
   updateGame();
