@@ -6,43 +6,52 @@ $(document).ready(function() {
   var height = canvas.height;
 
   // PUT STUFF HERE
+  var numBalls = 8;
   var balls = [];
-  var b0 = {
-    x: 20,
-    y: 20,
-    r: 10,
-    vx: 2,
-    vy: 2,
+  for(i = 0; i < numBalls; i++) {
+    var b = {
+      x: width * Math.random(),
+      y: height * Math.random(),
+      r: 16,
+      vx: (Math.random() * 5) + 1,
+      vy: (Math.random() * 5) +1,
+   };
+   balls.push(b)
   };
-  var b1 = {
-    x: 60,
-    y: 60,
-    r: 15,
-    vx: 2,
-    vy: 2,
-  };
-  var b2 = {
-    x: 95,
-    y: 95,
-    r: 12,
-    vx: 2,
-    vy: 2,
-  };
-  balls.push(b0);
-  balls.push(b1);
-  balls.push(b2);
-  
-  // Run an interation of the game
+    // Run an interation of the game
   var updateGame = function() {
+    context.fillStyle = "black";
+    context.fillRect(0, 0, width, height);
     for(var i = 0; i < balls.length; i++) {
       context.fillStyle = "red";
       context.beginPath()
         context.arc(balls[i].x, balls[i].y, balls[i].r, Math.PI, -Math.PI);
       context.closePath()
       context.fill(); 
+    if (balls[i].x + .5*balls[i].r > width) {
+      balls[i].vx = -balls[i].vx
+    } else {};
+    
+    if (balls[i].x - .5*balls[i].r < 0) {
+      balls[i].vx = -balls[i].vx
+    } else {};
+
+    if (balls[i].y + .5*balls[i].r > height) {
+      balls[i].vy = -balls[i].vy
+    } else {};
+
+    if (balls[i].y - .5*balls[i].r < 0) {
+      balls[i].vy = -balls[i].vy
+    } else {};
+   
+    balls[i].x = balls[i].x + balls[i].vx;
+    balls[i].y = balls[i].y + balls[i].vy;
+
     };
-  setTimeout(updateGame, 10);
-  };
+
+  requestAnimationFrame(updateGame);
+ };
+
 
 
   // Handle a canvas click event
